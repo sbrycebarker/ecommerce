@@ -245,7 +245,7 @@ animation-delay: 2s;
   background-color: white;
 }*/
 
-#contact {
+#Contact {
   height: 100px;
   width: 200px;
   position: absolute;
@@ -253,4 +253,8 @@ animation-delay: 2s;
   margin-top: 105%;
   text-rendering: auto;
   overflow: inherit;
+}
+
+.s6imageItemlink:hover {
+  opacity: .5;
 }

@@ -14,20 +14,21 @@ app.use(cors());
 //controllers......
 
 var TurbosController = require('./controllers/TurbosController')
-// var TurbosController = require('./controllers/SeatsController')
+var SeatsController = require('./controllers/SeatsController')
+
 
 //endpoints..........
 app.post('/turbos', TurbosController.create);
 app.get('/turbos', TurbosController.read);
-app.get('/turbos:id/', TurbosController.show);
-app.put('/turbos:id/', TurbosController.update);
-app.delete('/turbos:id/', TurbosController.destroy);
+app.get('/turbos/:id', TurbosController.show);
+app.put('/turbos/:id', TurbosController.update);
+app.delete('/turbos/:id', TurbosController.destroy);
 
-// app.post('/seats', SeatsController.create);
-// app.get('/seats', SeatsController.read);
-// app.get('/seats:id/', SeatsController.show);
-// app.put('/seats:id/', SeatsController.update);
-// app.delete('/seats:id/', SeatsController.destroy);
+app.post('/seats', SeatsController.create);
+app.get('/seats', SeatsController.read);
+app.get('/seats:id/', SeatsController.show);
+app.put('/seats:id/', SeatsController.update);
+app.delete('/seats:id/', SeatsController.destroy);
 
 
 

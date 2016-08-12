@@ -50,3 +50,10 @@ angular.module("ecommerce", ['ui.router']).config(function ($stateProvider, $url
         $urlRouterProvider
             .otherwise('/');
     });
+
+    // app.run(function ($rootScope, $location, $anchorScroll, $stateParams) {
+    //   $rootScope.$on('$routeChangeSuccess', function (newRoute, oldRoute) {
+    //     $location.hash($stateParams.scrollTo);
+    //     $anchorScroll();
+    //   });
+    // });

@@ -1,20 +1,20 @@
-var Turbo = require('../models/turbos');
+var Seat = require('../models/Seats');
 
 module.exports =
 {
   create: function(req, res, next) {
-    var turbo = new Turbo(req.body);
-      turbo.save(function(err, turbo) {
+    var seat = new Seat(req.body);
+      seat.save(function(err, seat) {
         if(err) {
           res.status(500).json(err);
         } else {
-          res.status(200).json(turbo);
+          res.status(200).json(seat);
         }
-      })
+      });
 
   },
   read: function(req, res, next) {
-    Turbo.find().exec(function(err, response){
+    seat.find().exec(function(err, response){
         if(err) {
           res.status(500).json(err)
         } else {
@@ -23,31 +23,31 @@ module.exports =
       });
   },
   update: function(req, res, next) {
-    Turbo.findByIdAndUpdate(req.params.id, req.body, function(error, turbo){
+    seat.Update({_id: req.params.id}, req.body, function(error, seat){
       if(error) {
         return res.status(500).json(error)
       } else {
-        return res.json(turbo)
+        return res.json(seat)
       }
     });
   },
   show: function(req, res, next) {
-    Turbo.findById(req.params.id, function(err, response){
+    seat.findById(req.params.id, function(err, seat){
         if(err) {
           res.status(500).json(err)
         } else {
-          res.json(response)
+          res.json(seat)
         }
       });
   },
   destroy: function(req, res, next) {
     console.log(req.params.id);
-    Turbo.findByIdAndRemove(req.params.id, function(error, turbo){
-      console.log(turbo);
+    seat.findByIdAndRemove(req.params.id, function(error, seat){
+      console.log(seat);
       if(error) {
         return res.status(500).json(error)
       } else {
-        return res.json(turbo)
+        return res.json(seat)
       }
     });
   },
