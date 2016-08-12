@@ -1,15 +1,26 @@
+
   <div class="Site Container">
+    <div class="background">
+      <img src="../html/img/turbo.png" style="width: 100%; height: 100%;">
+    </div>
 
-
-
-
-
-      <div class="base">
+<div class="turbos">
+  <div ng-repeat="seat in seats">
+    <div class="item">
+      <div class="itemimg">
+      <div class="info">
+        <p>{{seat.imgurl}}
+        <p>{{seat.title}}</P>
+        <p>{{seat.description}}</p>
+        <p>{{seat.price}}</p>
       </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-
-
+<div class="base">
+</div>
 
 
   </div>

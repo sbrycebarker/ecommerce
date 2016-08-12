@@ -14,7 +14,7 @@ module.exports =
 
   },
   read: function(req, res, next) {
-    seat.find().exec(function(err, response){
+    Seat.find().exec(function(err, response){
         if(err) {
           res.status(500).json(err)
         } else {
@@ -23,7 +23,7 @@ module.exports =
       });
   },
   update: function(req, res, next) {
-    seat.Update({_id: req.params.id}, req.body, function(error, seat){
+    Seat.Update({_id: req.params.id}, req.body, function(error, seat){
       if(error) {
         return res.status(500).json(error)
       } else {
@@ -32,7 +32,7 @@ module.exports =
     });
   },
   show: function(req, res, next) {
-    seat.findById(req.params.id, function(err, seat){
+    Seat.findById(req.params.id, function(err, seat){
         if(err) {
           res.status(500).json(err)
         } else {
@@ -42,7 +42,7 @@ module.exports =
   },
   destroy: function(req, res, next) {
     console.log(req.params.id);
-    seat.findByIdAndRemove(req.params.id, function(error, seat){
+    Seat.findByIdAndRemove(req.params.id, function(error, seat){
       console.log(seat);
       if(error) {
         return res.status(500).json(error)
